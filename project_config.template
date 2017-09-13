@@ -1,0 +1,13 @@
+[access]
+        inheritFrom = $Institute
+[access "refs/*"]
+        owner = group $Group-admin
+        read = group $Group-team
+        labelAs-Code-Review = -2..+2 group $Group-team
+[access "refs/heads/*"]
+        push = group $Group-core
+        label-Workflow = -1..+1 group $Group-core
+        submit = group $Group-core
+[access "refs/heads/feature/*"]
+        create = group $Group-team
+        push = group $Group-team
